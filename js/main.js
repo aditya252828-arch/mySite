@@ -22,76 +22,6 @@ const CONFIG = {
   },
 };
 
-/* ---------------------------------------------------------
-   ✏️  PROPERTY LISTINGS
-   These are SAMPLE listings. Replace them with your real ones.
-   deal: 'sale' or 'rent'
-   image: any file in assets/img/
-   --------------------------------------------------------- */
-const LISTINGS = [
-  // ---- Flats ----
-  { id: 'FL-101', category: 'flats', deal: 'sale', title: '2 BHK Apartment', location: 'Baner, Pune', price: '₹95 Lakh', facts: [['bed', '2 BHK'], ['area', '1,050 sq ft'], ['tag', 'Ready to move']], image: 'flats.jpg' },
-  { id: 'FL-102', category: 'flats', deal: 'sale', title: '3 BHK Apartment', location: 'Kharadi, Pune', price: '₹1.45 Cr', facts: [['bed', '3 BHK'], ['area', '1,420 sq ft'], ['tag', 'Gated society']], image: 'flats.jpg' },
-  { id: 'FL-103', category: 'flats', deal: 'sale', title: '3 BHK Premium Flat', location: 'Kothrud, Pune', price: '₹1.8 Cr', facts: [['bed', '3 BHK'], ['area', '1,600 sq ft'], ['tag', 'Under construction']], image: 'interior.jpg' },
-  { id: 'FL-201', category: 'flats', deal: 'rent', title: '1 BHK Apartment', location: 'Hinjewadi Phase 1, Pune', price: '₹18,000', priceNote: '/month', facts: [['bed', '1 BHK'], ['area', '620 sq ft'], ['tag', 'Semi-furnished']], image: 'flats.jpg' },
-  { id: 'FL-202', category: 'flats', deal: 'rent', title: '2 BHK Apartment', location: 'Wakad, Pune', price: '₹26,000', priceNote: '/month', facts: [['bed', '2 BHK'], ['area', '980 sq ft'], ['tag', 'Family preferred']], image: 'interior.jpg' },
-  { id: 'FL-203', category: 'flats', deal: 'rent', title: '2 BHK Furnished Flat', location: 'Viman Nagar, Pune', price: '₹35,000', priceNote: '/month', facts: [['bed', '2 BHK'], ['area', '1,100 sq ft'], ['tag', 'Fully furnished']], image: 'flats.jpg' },
-
-  // ---- Plots & Land ----
-  { id: 'PL-101', category: 'plots', deal: 'sale', title: 'Residential NA Plot', location: 'Hinjewadi Phase 3, Pune', price: '₹62 Lakh', facts: [['area', '2,500 sq ft'], ['tag', 'Clear title']], image: 'plots.jpg' },
-  { id: 'PL-102', category: 'plots', deal: 'sale', title: 'Corner Residential Plot', location: 'Wagholi, Pune', price: '₹38 Lakh', facts: [['area', '1,800 sq ft'], ['tag', 'Road-facing']], image: 'plots.jpg' },
-  { id: 'PL-103', category: 'plots', deal: 'sale', title: 'Agricultural Land', location: 'Mulshi, Pune District', price: '₹85 Lakh', facts: [['area', '1 acre'], ['tag', 'Water access']], image: 'plots.jpg' },
-  { id: 'PL-104', category: 'plots', deal: 'sale', title: 'Industrial Plot', location: 'Chakan, Pune', price: '₹2.4 Cr', facts: [['area', '10,000 sq ft'], ['tag', 'Near MIDC']], image: 'plots.jpg' },
-
-  // ---- Commercial ----
-  { id: 'CM-101', category: 'commercial', deal: 'sale', title: 'Retail Shop', location: 'FC Road, Pune', price: '₹1.1 Cr', facts: [['area', '450 sq ft'], ['tag', 'Ground floor']], image: 'commercial.jpg' },
-  { id: 'CM-102', category: 'commercial', deal: 'sale', title: 'Office Space', location: 'Kharadi, Pune', price: '₹2.6 Cr', facts: [['area', '2,000 sq ft'], ['tag', 'IT corridor']], image: 'commercial.jpg' },
-  { id: 'CM-201', category: 'commercial', deal: 'rent', title: 'Furnished Office', location: 'Baner, Pune', price: '₹85,000', priceNote: '/month', facts: [['area', '1,200 sq ft'], ['tag', '20 workstations']], image: 'commercial.jpg' },
-  { id: 'CM-202', category: 'commercial', deal: 'rent', title: 'Showroom', location: 'Wakad, Pune', price: '₹2.2 Lakh', priceNote: '/month', facts: [['area', '2,800 sq ft'], ['tag', 'Main road']], image: 'commercial.jpg' },
-  { id: 'CM-203', category: 'commercial', deal: 'rent', title: 'Warehouse', location: 'Chakan, Pune', price: '₹3.5 Lakh', priceNote: '/month', facts: [['area', '15,000 sq ft'], ['tag', 'Truck access']], image: 'plots.jpg' },
-];
-
-const CATEGORIES = {
-  flats: {
-    label: 'Flats', service: 'Flats', image: 'flats.jpg',
-    modes: [
-      { key: 'sale', label: 'Buy' },
-      { key: 'rent', label: 'Rent' },
-      { key: 'owner', label: 'Sell / Rent out' },
-    ],
-    owner: {
-      title: ['Sell or rent out', 'your flat'],
-      text: 'Reach serious buyers and tenants without the hassle. We handle pricing, marketing, site visits and the paperwork.',
-      ticks: ['Free price estimate for your area', 'Verified buyers and tenants only', 'Help with agreements and registration'],
-    },
-  },
-  plots: {
-    label: 'Plots & Land', service: 'Plots & Land', image: 'plots.jpg',
-    modes: [
-      { key: 'sale', label: 'Buy' },
-      { key: 'owner', label: 'Sell' },
-    ],
-    owner: {
-      title: ['Sell your', 'plot or land'],
-      text: 'From small residential plots to large land parcels, we find the right buyer and help with the title and documents.',
-      ticks: ['Title and 7/12 extract checks', 'Valuation based on current local prices', 'Discreet, well-screened buyers'],
-    },
-  },
-  commercial: {
-    label: 'Commercial', service: 'Commercial Property', image: 'commercial.jpg',
-    modes: [
-      { key: 'sale', label: 'Buy' },
-      { key: 'rent', label: 'Rent' },
-      { key: 'owner', label: 'Sell / Lease out' },
-    ],
-    owner: {
-      title: ['Sell or lease', 'commercial space'],
-      text: 'Offices, shops, showrooms and warehouses. We match your space with businesses that are ready to move in.',
-      ticks: ['Corporate and retail tenant network', 'Lease terms and rent advice', 'Help with agreements and paperwork'],
-    },
-  },
-};
-
 /* ========================================================= */
 
 document.documentElement.classList.add('js');
@@ -149,154 +79,6 @@ function applyConfig() {
   document.head.appendChild(s);
 }
 
-/* ---------- Listings ---------- */
-function listingCard(l) {
-  const isRent = l.deal === 'rent';
-  const facts = l.facts.map(([ic, txt]) => `<li>${icon(ic)}${escapeHtml(txt)}</li>`).join('');
-  return `
-    <article class="listing">
-      <div class="listing__media">
-        <img src="assets/img/${l.image}" alt="${escapeHtml(l.title)} in ${escapeHtml(l.location)}" loading="lazy" width="800" height="500">
-        <span class="badge ${isRent ? 'badge--rent' : ''}">${isRent ? 'For Rent' : 'For Sale'}</span>
-        <span class="listing__ref">Ref ${escapeHtml(l.id)}</span>
-      </div>
-      <div class="listing__body">
-        <p class="listing__price">${escapeHtml(l.price)} ${l.priceNote ? `<small>${escapeHtml(l.priceNote)}</small>` : ''}</p>
-        <h4 class="listing__title">${escapeHtml(l.title)}</h4>
-        <p class="listing__loc">${icon('pin')}${escapeHtml(l.location)}</p>
-        <ul class="listing__facts">${facts}</ul>
-        <div class="listing__actions">
-          <a class="btn btn--whatsapp btn--sm" href="${waLink(listingMessage(l))}" target="_blank" rel="noopener">
-            ${icon('whatsapp')} Enquire
-          </a>
-          <button class="btn btn--ghost btn--sm" type="button" data-callback="${escapeHtml(l.id)}">Call me back</button>
-        </div>
-      </div>
-    </article>`;
-}
-
-function listingMessage(l) {
-  return `Hi SSAG Partners, I'm interested in this property:\n\n*${l.title}* (Ref ${l.id})\n${l.location}\n${l.deal === 'rent' ? 'For Rent' : 'For Sale'}: ${l.price}${l.priceNote || ''}\n\nPlease share more details.`;
-}
-
-function ownerPanel(catKey) {
-  const c = CATEGORIES[catKey];
-  const o = c.owner;
-  const msg = `Hi SSAG Partners, I'd like to ${o.title.join(' ').toLowerCase()}. Please get in touch.`;
-  return `
-    <div class="owner-cta">
-      <div class="owner-cta__media"><img src="assets/img/${c.image}" alt="" loading="lazy"></div>
-      <div class="owner-cta__body">
-        <h3><strong>${escapeHtml(o.title[0])}</strong> <span>${escapeHtml(o.title[1])}</span></h3>
-        <p>${escapeHtml(o.text)}</p>
-        <ul class="ticks">${o.ticks.map((t) => `<li>${icon('check')}${escapeHtml(t)}</li>`).join('')}</ul>
-        <div class="owner-cta__actions">
-          <a class="btn btn--gold" href="${waLink(msg)}" target="_blank" rel="noopener">${icon('whatsapp')} List on WhatsApp</a>
-          <button class="btn btn--outline-light" type="button" data-owner="${catKey}">Fill the enquiry form</button>
-        </div>
-      </div>
-    </div>`;
-}
-
-function renderPanel(panel, mode) {
-  const catKey = panel.dataset.category;
-  const cat = CATEGORIES[catKey];
-  mode = mode || cat.modes[0].key;
-  panel.dataset.mode = mode;
-
-  const seg = cat.modes.map((m) =>
-    `<button type="button" data-mode="${m.key}" aria-pressed="${m.key === mode}">${escapeHtml(m.label)}</button>`).join('');
-
-  let body;
-  if (mode === 'owner') {
-    body = ownerPanel(catKey);
-  } else {
-    const items = LISTINGS.filter((l) => l.category === catKey && l.deal === mode);
-    body = items.length
-      ? `<div class="listings">${items.map(listingCard).join('')}</div>
-         <p class="listings-note">Can't find what you need? We have more properties than we list here. <a href="#contact" data-prefill="${escapeHtml(cat.service)}">Tell us your requirement</a>.</p>`
-      : `<p class="listings-note">No listings right now. <a href="#contact" data-prefill="${escapeHtml(cat.service)}">Tell us what you need</a> and we'll find options for you.</p>`;
-  }
-
-  const modeLabel = cat.modes.find((m) => m.key === mode).label;
-  panel.innerHTML = `
-    <div class="panel-bar">
-      <h3 class="panel-bar__title">${escapeHtml(cat.label)} <span>/ ${escapeHtml(modeLabel)}</span></h3>
-      <div class="segmented" role="group" aria-label="${escapeHtml(cat.label)}: choose buy, rent or sell">${seg}</div>
-    </div>
-    <div class="panel-body">${body}</div>`;
-}
-
-function initListings() {
-  $$('.tab-panel').forEach((p) => renderPanel(p));
-
-  $('#properties').addEventListener('click', (e) => {
-    const modeBtn = e.target.closest('button[data-mode]');
-    if (modeBtn) {
-      const panel = modeBtn.closest('.tab-panel');
-      renderPanel(panel, modeBtn.dataset.mode);
-      $(`button[data-mode="${modeBtn.dataset.mode}"]`, panel).focus();
-      return;
-    }
-    const cb = e.target.closest('[data-callback]');
-    if (cb) {
-      const l = LISTINGS.find((x) => x.id === cb.dataset.callback);
-      prefillForm({
-        service: CATEGORIES[l.category].service,
-        intent: l.deal === 'rent' ? 'Rent (as tenant)' : 'Buy',
-        location: l.location.replace(/, Pune.*$/, ''),
-        message: `Interested in ${l.title} (Ref ${l.id}), ${l.location}, ${l.price}${l.priceNote || ''}. Please call me back.`,
-      });
-      return;
-    }
-    const owner = e.target.closest('[data-owner]');
-    if (owner) {
-      const key = owner.dataset.owner;
-      prefillForm({
-        service: CATEGORIES[key].service,
-        intent: 'Sell',
-        message: `I'd like to ${CATEGORIES[key].owner.title.join(' ').toLowerCase()}.`,
-      });
-    }
-  });
-}
-
-/* ---------- Tabs ---------- */
-const tabs = $$('.tab');
-function selectTab(key, { focus = false } = {}) {
-  tabs.forEach((t) => {
-    const on = t.dataset.tab === key;
-    t.setAttribute('aria-selected', on);
-    t.tabIndex = on ? 0 : -1;
-    $('#' + t.getAttribute('aria-controls')).hidden = !on;
-    if (on && focus) t.focus();
-  });
-  updateNavCurrent();
-}
-function initTabs() {
-  tabs.forEach((t, i) => {
-    t.addEventListener('click', () => selectTab(t.dataset.tab));
-    t.addEventListener('keydown', (e) => {
-      let n = null;
-      if (e.key === 'ArrowRight') n = (i + 1) % tabs.length;
-      if (e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
-      if (e.key === 'Home') n = 0;
-      if (e.key === 'End') n = tabs.length - 1;
-      if (n !== null) { e.preventDefault(); selectTab(tabs[n].dataset.tab, { focus: true }); }
-    });
-  });
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest('[data-tab-link]');
-    if (link) selectTab(link.dataset.tabLink);
-  });
-  const fromHash = () => {
-    const key = location.hash.slice(1);
-    if (CATEGORIES[key]) selectTab(key);
-  };
-  window.addEventListener('hashchange', fromHash);
-  fromHash();
-}
-
 /* ---------- Enquiry form ---------- */
 const PROPERTY_SERVICES = ['Flats', 'Plots & Land', 'Commercial Property'];
 const form = $('#enquiry-form');
@@ -328,7 +110,9 @@ function prefillForm({ service, intent, location, message }) {
   if (location) $('#f-location').value = location;
   if (message) $('#f-message').value = message;
   clearError('services');
-  $('#contact').scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+  // On phones the form sits below the contact details, so scroll straight to the form
+  const target = window.matchMedia('(max-width: 960px)').matches ? form : $('#contact');
+  target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
   setTimeout(() => $('#f-name').focus({ preventScroll: true }), prefersReducedMotion ? 0 : 600);
 }
 
@@ -488,6 +272,7 @@ function initNav() {
   const setOpen = (open) => {
     links.classList.toggle('is-open', open);
     scrim.classList.toggle('is-open', open);
+    header.classList.toggle('menu-open', open);
     toggle.setAttribute('aria-expanded', open);
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     $('use', toggle).setAttribute('href', open ? '#i-close' : '#i-menu');
@@ -505,15 +290,15 @@ function initNav() {
 
 let currentSection = '';
 function updateNavCurrent() {
-  let key = currentSection;
-  if (key === 'properties') key = $('.tab[aria-selected="true"]').dataset.tab;
-  $$('.nav__links a').forEach((a) => {
+  const key = currentSection;
+  // Flats / Plots / Commercial also point at #contact (to pre-fill the form), so they're left out here
+  $$('.nav__links a:not([data-prefill])').forEach((a) => {
     const on = key && a.getAttribute('href') === `#${key}`;
     on ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current');
   });
 }
 function initScrollSpy() {
-  const ids = ['architecture', 'interiors', 'properties', 'contact'];
+  const ids = ['architecture', 'interiors', 'contact'];
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => {
       if (en.isIntersecting) currentSection = en.target.id;
@@ -547,8 +332,6 @@ function initReveal() {
 
 /* ---------- Boot ---------- */
 applyConfig();
-initListings();
-initTabs();
 initForm();
 initQuickbar();
 initNav();
