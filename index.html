@@ -80,9 +80,9 @@
       <li><a href="#top">Home</a></li>
       <li><a href="#architecture">Architecture</a></li>
       <li><a href="#interiors">Interiors</a></li>
-      <li><a href="#flats" data-tab-link="flats">Flats</a></li>
-      <li><a href="#plots" data-tab-link="plots">Plots &amp; Land</a></li>
-      <li><a href="#commercial" data-tab-link="commercial">Commercial</a></li>
+      <li><a href="#contact" data-prefill="Flats">Flats</a></li>
+      <li><a href="#contact" data-prefill="Plots &amp; Land">Plots &amp; Land</a></li>
+      <li><a href="#contact" data-prefill="Commercial Property">Commercial</a></li>
       <li><a href="#contact">Contact</a></li>
       <li class="nav__cta-mobile"><a class="btn btn--gold" href="#contact">Enquire now</a></li>
     </ul>
@@ -119,13 +119,13 @@
     <!-- Quick enquiry bar -->
     <form class="quickbar" id="quickbar" aria-label="Quick WhatsApp enquiry">
       <div class="quickbar__field">
-        <label for="qb-service">I'm looking for</label>
+        <label for="qb-service">I'm Looking For</label>
         <select id="qb-service" name="service">
-          <option value="Flats">A flat</option>
-          <option value="Plots & Land">A plot / land</option>
-          <option value="Commercial Property">Commercial property</option>
-          <option value="Architect Services">Architect services</option>
-          <option value="Interior Design">Interior design</option>
+          <option value="Flats">A Flat</option>
+          <option value="Plots & Land">A Plot / Land</option>
+          <option value="Commercial Property">Commercial Property</option>
+          <option value="Architect Services">Architect Services</option>
+          <option value="Interior Design">Interior Design</option>
         </select>
       </div>
       <div class="quickbar__field" id="qb-intent-wrap">
@@ -137,7 +137,7 @@
         </select>
       </div>
       <div class="quickbar__field quickbar__field--grow">
-        <label for="qb-location">Area in Pune</label>
+        <label for="qb-location">Area In Pune</label>
         <input id="qb-location" name="location" type="text" placeholder="e.g. Baner, Kharadi, Wakad" autocomplete="off">
       </div>
       <button class="btn btn--gold quickbar__btn" type="submit">
@@ -158,38 +158,38 @@
     <div class="svc-grid">
       <article class="svc-card reveal">
         <a class="svc-card__media" href="#architecture">
-          <img src="assets/img/architecture.jpg" alt="Architects reviewing building plans on a construction site" width="1600" height="963" loading="lazy">
+          <img src="assets/img/architecture.jpg" srcset="assets/img/architecture-800.jpg 800w, assets/img/architecture.jpg 1600w" sizes="(max-width: 479px) 100vw, 560px" alt="Architects reviewing building plans on a construction site" width="1600" height="963" loading="lazy">
           <div class="svc-card__label"><h3>Architect Services</h3><p>Planning, approvals &amp; supervision</p></div>
         </a>
         <a class="pill-link" href="#architecture">View details <svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg></a>
       </article>
       <article class="svc-card reveal">
         <a class="svc-card__media" href="#interiors">
-          <img src="assets/img/interior.jpg" alt="Bright living room with linen sofa, rattan pendant lights and oak floor" width="1920" height="1280" loading="lazy">
+          <img src="assets/img/interior.jpg" srcset="assets/img/interior-800.jpg 800w, assets/img/interior.jpg 1920w" sizes="(max-width: 479px) 100vw, 560px" alt="Bright living room with linen sofa, rattan pendant lights and oak floor" width="1920" height="1280" loading="lazy">
           <div class="svc-card__label"><h3>Interior Design</h3><p>Homes, offices &amp; turnkey fit-outs</p></div>
         </a>
         <a class="pill-link" href="#interiors">View details <svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg></a>
       </article>
       <article class="svc-card reveal">
-        <a class="svc-card__media" href="#flats" data-tab-link="flats">
-          <img src="assets/img/flats.jpg" alt="Aerial view of residential towers with landscaped gardens and a pool" width="1376" height="768" loading="lazy">
+        <a class="svc-card__media" href="#contact" data-prefill="Flats" aria-label="Flats: buy, sell or rent. Enquire now">
+          <img src="assets/img/flats.jpg" srcset="assets/img/flats-800.jpg 800w, assets/img/flats.jpg 1376w" sizes="(max-width: 479px) 100vw, 560px" alt="" width="1376" height="768" loading="lazy">
           <div class="svc-card__label"><h3>Flats</h3><p>Buy, sell or rent</p></div>
         </a>
-        <a class="pill-link" href="#flats" data-tab-link="flats">View flats <svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg></a>
+        <a class="pill-link" href="#contact" data-prefill="Flats">Enquire now <svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg></a>
       </article>
       <article class="svc-card reveal">
-        <a class="svc-card__media" href="#plots" data-tab-link="plots">
-          <img src="assets/img/plots.jpg" alt="Walled open plot with a For Sale sign beside a city road" width="1307" height="766" loading="lazy">
+        <a class="svc-card__media" href="#contact" data-prefill="Plots &amp; Land" aria-label="Plots and land: buy or sell. Enquire now">
+          <img src="assets/img/plots.jpg" srcset="assets/img/plots-800.jpg 800w, assets/img/plots.jpg 1365w" sizes="(max-width: 479px) 100vw, 560px" alt="" width="1365" height="768" loading="lazy">
           <div class="svc-card__label"><h3>Plots &amp; Land</h3><p>Buy or sell</p></div>
         </a>
-        <a class="pill-link" href="#plots" data-tab-link="plots">View plots <svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg></a>
+        <a class="pill-link" href="#contact" data-prefill="Plots &amp; Land">Enquire now <svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg></a>
       </article>
       <article class="svc-card reveal">
-        <a class="svc-card__media" href="#commercial" data-tab-link="commercial">
-          <img src="assets/img/commercial.jpg" alt="Modern glass office tower seen from below" width="1600" height="891" loading="lazy">
-          <div class="svc-card__label"><h3>Commercial</h3><p>Offices, shops &amp; warehouses</p></div>
+        <a class="svc-card__media" href="#contact" data-prefill="Commercial Property" aria-label="Commercial property: buy, sell or rent. Enquire now">
+          <img src="assets/img/commercial.jpg" srcset="assets/img/commercial-800.jpg 800w, assets/img/commercial.jpg 1600w" sizes="(max-width: 479px) 100vw, 560px" alt="" width="1600" height="902" loading="lazy">
+          <div class="svc-card__label"><h3>Commercial</h3><p>Buy, sell or rent</p></div>
         </a>
-        <a class="pill-link" href="#commercial" data-tab-link="commercial">View commercial <svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg></a>
+        <a class="pill-link" href="#contact" data-prefill="Commercial Property">Enquire now <svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg></a>
       </article>
     </div>
   </div>
@@ -213,7 +213,7 @@
 
       <ol class="steps">
         <li class="step step--image reveal">
-          <img src="assets/img/architecture.jpg" alt="Our architects reviewing drawings on site" width="1600" height="963" loading="lazy">
+          <img src="assets/img/architecture.jpg" srcset="assets/img/architecture-800.jpg 800w, assets/img/architecture.jpg 1600w" sizes="(max-width: 767px) 90vw, 420px" alt="Our architects reviewing drawings on site" width="1600" height="963" loading="lazy">
           <div class="step__body"><h3><span>1.</span> Site Study &amp; Brief</h3><p>Plot survey, bylaws check and your wishlist</p></div>
         </li>
         <li class="step reveal">
@@ -250,7 +250,7 @@
 
     <div class="interiors">
       <figure class="interiors__feature reveal">
-        <img src="assets/img/interior.jpg" alt="Calm living room interior with large black-framed windows and natural textures" width="1920" height="1280" loading="lazy">
+        <img src="assets/img/interior.jpg" srcset="assets/img/interior-800.jpg 800w, assets/img/interior.jpg 1920w" sizes="(max-width: 900px) 100vw, 720px" alt="Calm living room interior with large black-framed windows and natural textures" width="1920" height="1280" loading="lazy">
         <figcaption>
           <strong>Residential Interiors</strong>
           <span>Warm, practical homes designed around how you live</span>
@@ -279,39 +279,8 @@
   </div>
 </section>
 
-<!-- ============ PROPERTIES ============ -->
-<section class="section section--paper" id="properties" aria-labelledby="prop-title">
-  <span id="flats" class="anchor" aria-hidden="true"></span>
-  <span id="plots" class="anchor" aria-hidden="true"></span>
-  <span id="commercial" class="anchor" aria-hidden="true"></span>
-  <div class="container">
-    <header class="section-head section-head--center reveal">
-      <p class="eyebrow eyebrow--dark">03 · Real Estate</p>
-      <h2 class="title" id="prop-title"><strong>Buy · Sell · Rent</strong><span>Property Across Pune</span></h2>
-      <p class="section-head__lead">Checked listings, honest advice and help with the paperwork, whether you're buying, selling or renting out.</p>
-    </header>
-
-    <div class="tabs" role="tablist" aria-label="Property type">
-      <button class="tab" role="tab" id="tab-flats" aria-controls="panel-flats" aria-selected="true" data-tab="flats">
-        <svg class="ic" aria-hidden="true"><use href="#i-building"/></svg> Flats
-      </button>
-      <button class="tab" role="tab" id="tab-plots" aria-controls="panel-plots" aria-selected="false" tabindex="-1" data-tab="plots">
-        <svg class="ic" aria-hidden="true"><use href="#i-map"/></svg> Plots &amp; Land
-      </button>
-      <button class="tab" role="tab" id="tab-commercial" aria-controls="panel-commercial" aria-selected="false" tabindex="-1" data-tab="commercial">
-        <svg class="ic" aria-hidden="true"><use href="#i-store"/></svg> Commercial
-      </button>
-    </div>
-
-    <!-- Panels are filled by js/main.js from the LISTINGS data -->
-    <div class="tab-panel" role="tabpanel" id="panel-flats" aria-labelledby="tab-flats" data-category="flats"></div>
-    <div class="tab-panel" role="tabpanel" id="panel-plots" aria-labelledby="tab-plots" data-category="plots" hidden></div>
-    <div class="tab-panel" role="tabpanel" id="panel-commercial" aria-labelledby="tab-commercial" data-category="commercial" hidden></div>
-  </div>
-</section>
-
 <!-- ============ WHY US ============ -->
-<section class="section section--white" id="why" aria-labelledby="why-title">
+<section class="section section--paper" id="why" aria-labelledby="why-title">
   <div class="container">
     <header class="section-head section-head--center reveal">
       <h2 class="title" id="why-title"><strong>Why SSAG</strong> <span>/ Partners</span></h2>
@@ -465,9 +434,9 @@
       <ul>
         <li><a href="#architecture">Architect Services</a></li>
         <li><a href="#interiors">Interior Design</a></li>
-        <li><a href="#flats" data-tab-link="flats">Flats</a></li>
-        <li><a href="#plots" data-tab-link="plots">Plots &amp; Land</a></li>
-        <li><a href="#commercial" data-tab-link="commercial">Commercial Property</a></li>
+        <li><a href="#contact" data-prefill="Flats">Flats</a></li>
+        <li><a href="#contact" data-prefill="Plots &amp; Land">Plots &amp; Land</a></li>
+        <li><a href="#contact" data-prefill="Commercial Property">Commercial Property</a></li>
       </ul>
     </nav>
     <div class="footer__col">
