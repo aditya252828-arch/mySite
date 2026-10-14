@@ -1,5 +1,5 @@
 /* =========================================================
-   SSAG Partners: site script
+   The Canopy Ventures: site script
    ---------------------------------------------------------
    ✏️  EDIT YOUR DETAILS HERE. Everything on the page reads from CONFIG.
    ========================================================= */
@@ -10,7 +10,7 @@ const CONFIG = {
 
   phoneDisplay: '+91 00000 00000',
   phoneLink: '+910000000000',
-  email: 'info@example.com',
+  email: 'info@thecanopyventures.com',
   address: 'Office address, Pune, Maharashtra 411001',
   hours: 'Mon–Sat, 10:00 am – 7:00 pm',
 
@@ -55,7 +55,7 @@ function applyConfig() {
     else if (CONFIG.social[key]) el.href = CONFIG.social[key];
   });
   $$('.js-wa').forEach((el) => {
-    el.href = waLink(el.dataset.waMsg || 'Hi SSAG Partners, I have an enquiry.');
+    el.href = waLink(el.dataset.waMsg || 'Hi The Canopy Ventures team, I have an enquiry.');
     el.target = '_blank';
     el.rel = 'noopener';
   });
@@ -65,7 +65,7 @@ function applyConfig() {
   const ld = {
     '@context': 'https://schema.org',
     '@type': 'RealEstateAgent',
-    name: 'SSAG Partners',
+    name: 'The Canopy Ventures',
     description: 'Architect services, interior design, and help to buy, sell or rent flats, plots and commercial property in Pune.',
     telephone: CONFIG.phoneLink,
     email: CONFIG.email,
@@ -201,7 +201,7 @@ function initForm() {
     const data = new FormData(form);
     const services = data.getAll('services');
     const lines = [
-      'Hi SSAG Partners, I have an enquiry.',
+      'Hi The Canopy Ventures team, I have an enquiry.',
       '',
       `*Name:* ${data.get('name').trim()}`,
       `*Mobile:* ${data.get('phone').trim()}`,
@@ -252,7 +252,7 @@ function initQuickbar() {
     const loc = $('#qb-location').value.trim();
     const isProperty = PROPERTY_SERVICES.includes(svc.value);
     const what = isProperty ? `I'm looking to *${intent.value.toLowerCase()}* ${svc.selectedOptions[0].text.toLowerCase()}` : `I'm interested in *${svc.value}*`;
-    openWhatsApp(`Hi SSAG Partners, ${what}${loc ? ` in *${loc}*` : ' in Pune'}. Please share details.`);
+    openWhatsApp(`Hi The Canopy Ventures team, ${what}${loc ? ` in *${loc}*` : ' in Pune'}. Please share details.`);
   });
 }
 
@@ -285,7 +285,7 @@ function initNav() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && links.classList.contains('is-open')) { setOpen(false); toggle.focus(); }
   });
-  window.matchMedia('(min-width: 961px)').addEventListener('change', () => setOpen(false));
+  window.matchMedia('(min-width: 1101px)').addEventListener('change', () => setOpen(false));
 }
 
 let currentSection = '';
