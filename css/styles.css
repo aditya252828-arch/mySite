@@ -190,11 +190,10 @@ button { cursor: pointer; }
 
 .nav { display: flex; align-items: center; gap: var(--s5); height: 76px; }
 .brand { display: inline-flex; align-items: center; gap: var(--s3); text-decoration: none; margin-right: auto; }
-.brand img { width: auto; height: 44px; }
-/* Wordmark echoes the logo: serif "THE CANOPY" over spaced-out "VENTURES" */
-.brand__text { display: flex; flex-direction: column; align-items: center; line-height: 1; white-space: nowrap; color: var(--gold-soft); }
-.brand__name { font-family: "Cinzel", Georgia, serif; font-size: 19px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; }
-.brand__sub { font-family: var(--font-display); font-size: 10px; font-weight: 500; letter-spacing: .45em; margin-right: -.45em; text-transform: uppercase; margin-top: 4px; }
+/* Emblem + lettering are both cut from the logo artwork, so the header matches the footer logo exactly */
+.brand__icon { width: auto; height: 44px; }
+.brand__wordmark { width: auto; height: 34px; }
+@media (max-width: 359px) { .brand__wordmark { height: 28px; } }
 
 .nav__links { display: flex; align-items: center; gap: var(--s1); }
 .nav__links a:not(.btn) {
@@ -218,8 +217,8 @@ button { cursor: pointer; }
   border: 1px solid var(--line-gold); border-radius: 50%; background: transparent; color: var(--gold-soft);
 }
 
-/* Below 1100px the links no longer fit beside the logo, so switch to the drawer menu */
-@media (max-width: 1100px) {
+/* Below 1200px the links no longer fit beside the logo, so switch to the drawer menu */
+@media (max-width: 1200px) {
   :root { --header-h: 76px; }
   .topbar { display: none; }
   .nav { height: 76px; }
@@ -322,17 +321,17 @@ button { cursor: pointer; }
 .section-head__lead { max-width: 60ch; margin: var(--s4) auto 0; color: var(--muted); }
 
 /* ---------- Service cards ---------- */
-.svc-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--s4); }
-@media (max-width: 1100px) { .svc-grid { grid-template-columns: repeat(3, 1fr); } }
+/* Six services: 3 x 2 on desktop, 2 x 3 on tablets, stacked on phones */
+.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s5) var(--s4); }
 @media (max-width: 767px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 479px) { .svc-grid { grid-template-columns: 1fr; } }
 
 .svc-card { display: flex; flex-direction: column; gap: var(--s3); }
 .svc-card__media {
   position: relative; display: block; overflow: hidden; border-radius: var(--r-md);
-  aspect-ratio: 3 / 4; text-decoration: none; color: var(--white); box-shadow: var(--shadow-1);
+  aspect-ratio: 4 / 3; text-decoration: none; color: var(--white); box-shadow: var(--shadow-1);
 }
-@media (max-width: 479px) { .svc-card__media { aspect-ratio: 4 / 3; } }
+@media (min-width: 480px) and (max-width: 767px) { .svc-card__media { aspect-ratio: 1 / 1; } }
 .svc-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--t-slow) var(--ease-out); }
 .svc-card__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(15, 14, 12, .85)); }
 .svc-card__media:hover img { transform: scale(1.06); }
@@ -401,6 +400,24 @@ button { cursor: pointer; }
   .interiors { grid-template-columns: 1fr; }
   .interiors__feature { min-height: 320px; }
 }
+
+/* ---------- Legal ---------- */
+.legal { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--s6); align-items: stretch; }
+.legal__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s3); }
+.legal__grid li {
+  display: flex; gap: var(--s4); padding: var(--s5); border: 1px solid var(--line); border-radius: var(--r-md);
+  background: var(--white); transition: box-shadow var(--t-med), border-color var(--t-med);
+}
+.legal__grid li:hover { box-shadow: var(--shadow-2); border-color: transparent; }
+.legal__grid .ic-box { stroke: var(--gold-deep); }
+.legal__grid h3 { font-size: 16px; font-weight: 600; }
+.legal__grid p { font-size: 14px; color: var(--muted); margin-top: 4px; }
+.legal__note { margin-top: var(--s5); font-size: 13px; color: var(--muted); text-align: center; }
+@media (max-width: 1024px) {
+  .legal { grid-template-columns: 1fr; }
+  .legal__feature { order: -1; min-height: 300px; }
+}
+@media (max-width: 600px) { .legal__grid { grid-template-columns: 1fr; } }
 
 /* ---------- Why us ---------- */
 .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s4); }
@@ -480,6 +497,12 @@ fieldset[aria-invalid="true"] .chip span { border-color: var(--error); }
 
 .form-status { margin-top: var(--s3); font-size: 14px; text-align: center; }
 .form-status.is-success { color: var(--success); font-weight: 600; }
+.enquiry__privacy {
+  display: flex; gap: var(--s2); align-items: flex-start;
+  margin-top: var(--s4); padding-top: var(--s4); border-top: 1px solid var(--line);
+  font-size: 13px; line-height: 1.5; color: var(--muted);
+}
+.enquiry__privacy .ic { width: 16px; height: 16px; margin-top: 2px; color: var(--gold-deep); }
 
 /* =========================================================
    Footer

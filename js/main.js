@@ -6,10 +6,10 @@
 const CONFIG = {
   // WhatsApp number in international format: country code + number, digits only.
   // Example: India +91 98765 43210  ->  '919876543210'
-  whatsappNumber: '910000000000',
+  whatsappNumber: '917030097008',
 
-  phoneDisplay: '+91 00000 00000',
-  phoneLink: '+910000000000',
+  phoneDisplay: '+91 70300 97008',
+  phoneLink: '+917030097008',
   email: 'info@thecanopyventures.com',
   address: 'Office address, Pune, Maharashtra 411001',
   hours: 'Mon–Sat, 10:00 am – 7:00 pm',
@@ -66,7 +66,8 @@ function applyConfig() {
     '@context': 'https://schema.org',
     '@type': 'RealEstateAgent',
     name: 'The Canopy Ventures',
-    description: 'Architect services, interior design, and help to buy, sell or rent flats, plots and commercial property in Pune.',
+    description: 'Where Luxury Finds Its Address. Architect services, interior design, property legal services, and help to buy, sell or rent flats, plots and commercial property in Pune.',
+    slogan: 'Where Luxury Finds Its Address',
     telephone: CONFIG.phoneLink,
     email: CONFIG.email,
     address: { '@type': 'PostalAddress', streetAddress: CONFIG.address, addressLocality: 'Pune', addressRegion: 'Maharashtra', addressCountry: 'IN' },
@@ -285,7 +286,7 @@ function initNav() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && links.classList.contains('is-open')) { setOpen(false); toggle.focus(); }
   });
-  window.matchMedia('(min-width: 1101px)').addEventListener('change', () => setOpen(false));
+  window.matchMedia('(min-width: 1201px)').addEventListener('change', () => setOpen(false));
 }
 
 let currentSection = '';
@@ -298,7 +299,7 @@ function updateNavCurrent() {
   });
 }
 function initScrollSpy() {
-  const ids = ['architecture', 'interiors', 'contact'];
+  const ids = ['architecture', 'interiors', 'legal', 'contact'];
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => {
       if (en.isIntersecting) currentSection = en.target.id;
